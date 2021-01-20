@@ -1,6 +1,6 @@
 <?php   
 
-    var_dump(scandir(APPPATH . "/librar ies/"));
+    var_dump(scandir(APPPATH . "/libraries/"));
     require APPPATH . "libraries/REST_Controller.php";
     use Restserver\Libraries\REST_Controller;
    
