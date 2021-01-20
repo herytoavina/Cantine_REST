@@ -18,12 +18,6 @@ class PlatCommande extends REST_Controller {
      * 
      * @return Response
      */
-    
-    public function index_post() {
-        $input = $this->input->post();
-        $this->db->insert('PlatCommande', $input);
-        $this->response(['PlatCommande created successfully.'], REST_Controller::HTTP_OK);
-    }
 
     public function index_get($numetu = '0') {        
         if(!empty($numetu)){            
@@ -32,6 +26,12 @@ class PlatCommande extends REST_Controller {
             $data = $this->db->get("montant_total")->result();        
         }             
         $this->response($data, REST_Controller::HTTP_OK); 
+    }
+
+    public function index_post() {
+        $input = $this->input->post();
+        $this->db->insert('PlatCommande', $input);
+        $this->response(['PlatCommande created successfully.'], REST_Controller::HTTP_OK);
     }
 
 }
